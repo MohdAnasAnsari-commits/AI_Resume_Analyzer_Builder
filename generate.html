@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Resume</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="home-card">
+        <h1>📝 Resume Builder</h1>
+        <p class="subtitle">Fill in your details to generate a professional resume</p>
+
+        <form method="POST">
+
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="phone" placeholder="Phone Number" required>
+            <input type="text" name="address" placeholder="Address"> <!-- ✅ NEW FIELD -->
+            <input type="text" name="education" placeholder="Education" required>
+
+            <textarea name="intro" placeholder="Introduce Yourself (brief summary about you)"></textarea>
+            <textarea name="skills" placeholder="Skills (comma-separated)" required></textarea>
+            <textarea name="projects" placeholder="Projects" required></textarea>
+            <textarea name="experience" placeholder="Work Experience / Internship"></textarea>
+            <input type="text" name="certifications" placeholder="Certifications">
+            <input type="text" name="hobbies" placeholder="Hobbies">
+
+            <!-- ✅ TEMPLATE SELECTION -->
+            <h3 style="margin-top:20px;">🎨 Select Resume Template</h3>
+
+            <label style="display:block;margin:8px 0;">
+                <input type="radio" name="template" value="classic" checked>
+                Classic Professional
+            </label>
+
+            <label style="display:block;margin:8px 0;">
+                <input type="radio" name="template" value="modern">
+                Modern Sidebar
+            </label>
+
+            <label>
+                <input type="radio" name="template" value="elegant">
+                Elegant Professional
+            </label>
+
+            <label>
+                <input type="radio" name="template" value="corporate">
+                Corporate Executive
+            </label>
+
+            <label style="display:block;margin:8px 0;">
+                <input type="radio" name="template" value="minimal">
+                Minimal Clean
+            </label>
+
+            <button type="submit">📄 Generate Resume</button>
+        </form>
+
+        <a href="/" class="generate-btn">🏠 Back to Home</a>
+    </div>
+</div>
+
+</body>
+</html>

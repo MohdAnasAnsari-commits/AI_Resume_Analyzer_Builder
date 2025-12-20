@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Analyze Resume</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="home-card">
+        <h1>🔍 Resume Analyzer</h1>
+        <p class="subtitle">
+            Upload your resume to analyze skills, job suitability, and get improvement suggestions.
+        </p>
+
+        <form method="POST" enctype="multipart/form-data" onsubmit="showLoader()">
+
+            <label class="upload-box">
+                📂 Upload Your Resume Here (PDF / DOCX)
+                <input type="file" name="resume" accept=".pdf,.docx" required onchange="showFileName(this)">
+            </label>
+
+            <!-- ✅ FILE NAME DISPLAY -->
+            <p id="file-status" style="margin:10px 0;color:#2ecc71;font-weight:bold;"></p>
+
+            <button type="submit">Analyze Resume</button>
+        </form>
+
+        <div id="loader" class="loader">
+            <div class="spinner"></div>
+            <p>Scanning resume... Please wait</p>
+        </div>
+
+        <a href="/" class="generate-btn">🏠 Back to Home</a>
+    </div>
+</div>
+
+<script>
+function showFileName(input) {
+    const status = document.getElementById("file-status");
+    if (input.files.length > 0) {
+        status.innerText = "✅ Resume uploaded: " + input.files[0].name;
+    } else {
+        status.innerText = "";
+    }
+}
+
+function showLoader() {
+    document.querySelector(".home-card").style.display = "none";
+    document.getElementById("loader").style.display = "block";
+}
+</script>
+
+</body>
+</html>

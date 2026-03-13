@@ -1,5 +1,5 @@
 SKILLS = [
-    "python", "java", "c", "c++", "html", "css", "javascript",
+    "python", "java", "c", "c++", "C# .NET Framework","html", "css", "javascript",
     "flask", "django", "sql", "mysql", "mongodb",
     "machine learning", "data analysis", "nlp",
     "android", "git", "github", "react"
@@ -10,5 +10,5 @@ JOB_ROLES = {
     "Web Developer": ["html", "css", "javascript", "react"],
     "Data Analyst": ["python", "sql", "data analysis"],
     "Machine Learning Engineer": ["python", "machine learning", "nlp"],
-    "Android Developer": ["java", "android"]
+    "Android Developer": ["java", "android","kotlin"]
 }

@@ -13,7 +13,7 @@ app = Flask(__name__)
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-# ================= STATIC FILES =================
+#STATIC FILES 
 
 @app.route("/style.css")
 def style():
@@ -24,7 +24,7 @@ def style():
 def uploaded_file(filename):
     return send_from_directory(UPLOAD_FOLDER, filename)
 
-# ================= TEXT WRAPPING HELPER =================
+#TEXT WRAPPING HELPER
 
 def draw_wrapped_text(c, text, x, y, max_width, size=11):
     if not text:
@@ -46,7 +46,7 @@ def draw_wrapped_text(c, text, x, y, max_width, size=11):
     para.drawOn(c, x, y - h)
     return y - h - 10
 
-# ================= RESUME ANALYZER HELPERS =================
+#RESUME ANALYZER HELPERS 
 
 def extract_text(file_path):
     text = ""
@@ -88,7 +88,7 @@ def suggestions(skills_found):
         tips.append("Add internship or training experience.")
     return tips
 
-# ================= TEMPLATE FUNCTIONS =================
+#TEMPLATE FUNCTIONS 
 
 def classic_template(c, data):
     width, height = A4
@@ -200,7 +200,6 @@ def minimal_template(c, data):
             y -= 15
             y = draw_wrapped_text(c, value, 50, y, width - 100)
 
-# ================= NEW TEMPLATE FUNCTIONS (ADDED ONLY) =================
 
 def elegant_template(c, data):
     width, height = A4
@@ -268,7 +267,7 @@ def corporate_template(c, data):
             y -= 15
             y = draw_wrapped_text(c, value, 60, y, width - 120)
 
-# ================= ROUTES =================
+#ROUTES
 
 @app.route("/")
 def index():
@@ -348,9 +347,9 @@ def generate():
             modern_template(c, data)
         elif template == "minimal":
             minimal_template(c, data)
-        elif template == "elegant":          # ✅ ADDED
+        elif template == "elegant":          
             elegant_template(c, data)
-        elif template == "corporate":        # ✅ ADDED
+        elif template == "corporate":       
             corporate_template(c, data)
         else:
             classic_template(c, data)
